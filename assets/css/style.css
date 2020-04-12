@@ -1,0 +1,7 @@
+@import '../fonts/fonts.css';
+a{
+    font-size: 18px !important;
+}
+a,h3,p,input,button,span,li{
+    font-family: 'Vazir' !important;
+}
