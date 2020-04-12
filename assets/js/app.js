@@ -4,7 +4,7 @@ let input = document.querySelector('input');
 let btnSearch = document.querySelector('button');
 let btnRemove = document.querySelector('button:nth-child(2)');
 input.addEventListener('keyup', (e)=>{  
-    if(e.code === 'Enter' || e.code === 66){
+    if(e.code === 'Enter'){
         checkInput(input.value);
     }
     if(input.value === ''){

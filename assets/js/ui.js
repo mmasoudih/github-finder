@@ -8,17 +8,20 @@ class UI {
         let location;
 
         let formated = new Date(user.created_at);
-        if (user.company === null ||
-            user.blog === null || 
-            user.location === null
-            ) {
+        if (user.company === null) {
             company = '* * * * *';
-            blog = '* * * * *';
-            location = '* * * * *';
         } else {
-            company = user.company;
+            company = user.company; 
+        }
+        if(user.blog === null){
+            blog = '* * * * *';
+        }else{
             blog = user.blog;
-            location = user.location
+        }
+        if(user.location === null){
+            location = '* * * * *';
+        }else{
+            location = user.location;
         }
         this.profile.innerHTML = `
         <div class="uk-container uk-card uk-animation-slide-top-small uk-margin-large-bottom">
