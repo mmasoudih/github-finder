@@ -4,11 +4,21 @@ class UI {
     }
     showProfile(user) {
         let company;
+        let blog;
+        let location;
+
         let formated = new Date(user.created_at);
-        if (user.company === null) {
+        if (user.company === null ||
+            user.blog === null || 
+            user.location === null
+            ) {
             company = '* * * * *';
+            blog = '* * * * *';
+            location = '* * * * *';
         } else {
             company = user.company;
+            blog = user.blog;
+            location = user.location
         }
         this.profile.innerHTML = `
         <div class="uk-container uk-card uk-animation-slide-top-small uk-margin-large-bottom">
@@ -36,12 +46,12 @@ class UI {
     
                             <li class="uk-animation-slide-left-small">
                                 <span class="uk-animation-fade" uk-icon="chevron-double-left"></span>
-                                سایت/وبلاگ: <span><a href="${user.blog}" class="uk-link-reset">${user.blog}</a></span>
+                                سایت/وبلاگ: <span><a href="${blog}" class="uk-link-reset">${blog}</a></span>
                             </li>
     
                             <li class="uk-animation-slide-left-small">
                                 <span class="uk-animation-fade" uk-icon="chevron-double-left"></span>
-                                موقعیت: <span>${user.location}</span>
+                                موقعیت: <span>${location}</span>
                             </li>
     
                             <li class="uk-animation-slide-left-small">

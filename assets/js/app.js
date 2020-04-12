@@ -23,7 +23,6 @@ function checkInput(username){
         ui.showLoading();
         // get user profil
         github.getUser(username).then(data => {
-             // ********************
             if(!data.profile.message){
                 //show profile  
                 ui.showProfile(data.profile);
@@ -31,7 +30,7 @@ function checkInput(username){
                 //show error 
                 ui.showAlert('کاربری پیدا نشد!');
             }
-        }).finally(()=>{ui.hideLoading()}); // *******************
+        }).finally(()=>{ui.hideLoading()});
     }else{
         //clear profile 
         ui.changeColor(input);
